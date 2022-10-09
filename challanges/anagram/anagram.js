@@ -17,6 +17,7 @@
  * @param {string} t
  * @return {boolean}
  */
+
 const isAnagram = (s, t) => {
     if (t.length !== s.length) return false;
 
