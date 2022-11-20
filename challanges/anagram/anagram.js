@@ -18,23 +18,37 @@
  * @return {boolean}
  */
 
+// const isAnagram = (s, t) => {
+//     if (t.length !== s.length) return false;
+
+//     let map = {};
+
+//     for (const o of s) {
+//         map[o] = map[o] ? map[o] + 1 : 1;
+//     }
+
+//     for (const o of t) {
+//         if (!map[o])
+//             return false;
+
+//         map[o]--;
+//     }
+
+//     return true;
+// }
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
 const isAnagram = (s, t) => {
-    if (t.length !== s.length) return false;
+  if (t.length !== s.length) return false;
 
-    let map = {};
+  const sArray = [...s].sort();
+  const tArray = [...t].sort();
 
-    for (const o of s) {
-        map[o] = map[o] ? map[o] + 1 : 1;
-    }
-
-    for (const o of t) {
-        if (!map[o])
-            return false;
-
-        map[o]--;
-    }
-
-    return true;
-}
+  return sArray.join("") === tArray.join("");
+};
 
 module.exports = isAnagram;
